@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+
+    <style>
+
+        *{
+            margin: 0;
+        }
+
+        /* .box{
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+        }
+
+        .change{
+            background-color: gold;
+        }  이벤트 */
+
+        .box_wrap{
+            height: 300px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box{
+            width: 30%;
+            height: 100%;
+            background-color: salmon;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .on{
+            background-color: slateblue;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- <div class="box"></div> 이벤트 -->
+
+    <div class="box_wrap">
+        <div class="box box_1">1</div>
+        <div class="box box_2">2</div>
+        <div class="box box_3">3</div>
+    </div>
+
+    <script>
+
+        // 선택자.addEventListener('이벤트명', 실행할 함수)
+
+        // const boxEl = document.querySelector('.box');
+
+        // const handleBox = () => {
+        //     // boxEl.classList.toggle('change')
+        //     boxEl.style.backgroundColor ="orange"
+        // }
+
+        // boxEl.addEventListener('click', handleBox);
+            // 이벤트
+
+            // const box1 = document.querySelector('.box_1')
+            // const box2 = document.querySelector('.box_2')
+            // const box3 = document.querySelector('.box_3')
+            // const boxwrap = document.querySelector('.box_wrap')
+
+        // const handleClick = () => {
+        //     boxwrap.classList.toggle('on')
+        // }
+
+        // boxwrap.addEventListener('click', handleClick)
+        // box2.addEventListener('click', handleClick)
+        // box3.addEventListener('click', handleClick)
+
+
+        // const boxAll = document.querySelectorAll('.box');
+        const boxWrap = document.querySelector('.box_wrap')
+
+        const handleClick = (e) => {
+            // e.target.classList.toggle('on')
+            if(e.target.classList.contains('box')){
+                e.target.classList.toggle('on')
+            }
+            
+        }
+
+        boxWrap.addEventListener('click', handleClick)
+
+        // for(let i = 0; i < boxAll.length; i++){
+        //    boxAll[i].addEventListener('click', () => {
+        //        boxAll[i].classList.toggle('on')
+        //    })
+        // }
+
+
+
+    </script>
+    
+</body>
+</html>
